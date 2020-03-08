@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Flack Chat
+{% endblock %}
+
+{% block main %}
+    <script>
+        if (localStorage.getItem('lastChannel')) {
+            // Redirect to last channel
+            let channel = localStorage.getItem('lastChannel');
+            window.location.replace('/channels/' + channel);
+        }
+        else {
+            window.location.replace('/create');
+        }
+    </script>
+{% endblock %}
